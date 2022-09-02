@@ -22,7 +22,6 @@ stages:
 - stage: DevDeploy
   variables:
     environment: Dev
-  dependsOn: Build
   jobs:
   - job: DevDeployjob
     steps:
@@ -30,7 +29,6 @@ stages:
 - stage: QADeploy
   variables:
     environment: Dev
-  dependsOn: Build
   jobs:
   - job: QADeployjob
     steps:
@@ -38,9 +36,6 @@ stages:
 - stage: ProdDeploy
   variables:
     environment: QA
-  dependsOn:
-  - DevDeploy
-  - QADeploy
   jobs:
   - job: ProdDeployjob
     steps:
