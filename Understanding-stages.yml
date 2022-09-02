@@ -12,10 +12,10 @@ pool:
 stages:
 - stage: Bulid
   jobs:
-  - job: First job
+  - job: Firstjob
     steps:
     - bash: echo Build Firstjob
-  - job: Second job
+  - job: Secondjob
     steps:
     - bash: echo Build Secondjob
 - stage: DevDeploy
@@ -30,7 +30,7 @@ stages:
     - bash: echo QADeployjob
 - stage: ProdDeploy
   jobs:
-  - job: DProdDeployjob
+  - job: ProdDeployjob
     steps:
     - bash: echo ProdDeployjob    
 
