@@ -1,10 +1,11 @@
 trigger:
 - main
+ 
 strategy:
   matrix:
     linux: 
       operatingSystem: 'ubuntu-latest'
-    macos:
+    mac:
       operatingSystem: 'macos-latest' 
 
 pool:
