@@ -9,22 +9,29 @@ stages:
   - job: firstJob
     steps:
     - bash: echo Build fristjob
+    - bash: echo $(PipelineLevelVariables)
   - job: seconfJob
     steps:
     - bash: echo Build secondJob
 - stage: DevDeploy
+  variables:
+    environment: Dev
   dependsOn: Build
   jobs:
   - job: firstJob
     steps:
     - bash: echo DevDeploy fristjob
 - stage: QADeploy
+  variables:
+    environment: QA
   dependsOn: Build
   jobs:
   - job: firstJob
     steps:
     - bash: echo QADeploy fristjob
 - stage: ProdDeploy
+  variables:
+    environment: Prod
   dependsOn:
   - DevDeploy
   - QADeploy
